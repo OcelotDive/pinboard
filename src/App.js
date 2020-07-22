@@ -8,6 +8,7 @@ import Container from './components/Container';
 function App() {
 
   let [notes, setNotes] = useState([]);
+ 
 
   const addNote = () => {
     if(notes.length < 18) { 
@@ -19,12 +20,15 @@ function App() {
 
   }
 
-      const removeNote = (name) => {
-        
+      const removeNote = (name, ref) => {
+        ref.current.id = "noteUnpin"
+       console.warn(ref.current)
+      
+        setTimeout(() => {
         setNotes(notes.filter((note) => {
           return note != name;
         } ))
-        
+      }, 1000)
   }
 
   const textAdded = (index,e) => {

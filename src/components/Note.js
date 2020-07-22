@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
+
+
+
 
 
 const fadeAnim = keyframes`
@@ -25,6 +28,8 @@ background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-2
 background: linear-gradient(to right, #F3F9A7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 animation: ${fadeAnim} .5s linear;
+
+
 
 &:nth-of-type(2n + 0) {
 background: #f4c4f3;  /* fallback for old browsers */
@@ -99,11 +104,12 @@ outline: none
 
 
 const Note = ({removeNote, textAdded, index, name}) => {
-    
+  
+    const noteRef = useRef();
     return (
-        <StyledNote className="note">
+        <StyledNote ref={noteRef}>
            {name}
-            <StyledPin className="pin" onClick={(e) => removeNote(name, e)}></StyledPin>
+            <StyledPin className="pin" onClick={(e) => removeNote(name, noteRef, e)}></StyledPin>
             <StyledText onChange={(e) =>textAdded(index, e)}></StyledText>
         </StyledNote>
     )
