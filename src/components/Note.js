@@ -98,12 +98,12 @@ outline: none
 
 
 
-const Note = ({removeNote, textAdded, index}) => {
+const Note = ({removeNote, textAdded, index, name}) => {
     
     return (
         <StyledNote className="note">
-           {index}
-            <StyledPin className="pin" onClick={(e) => removeNote(index, e)}></StyledPin>
+           {name}
+            <StyledPin className="pin" onClick={(e) => removeNote(name, e)}></StyledPin>
             <StyledText onChange={(e) =>textAdded(index, e)}></StyledText>
         </StyledNote>
     )

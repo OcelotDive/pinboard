@@ -11,7 +11,7 @@ function App() {
 
   const addNote = () => {
     if(notes.length < 18) { 
-    setNotes([...notes, ""]);
+    setNotes([...notes,Math.floor(Math.random() * 20000 + notes.length)]);
     }
     else {
       alert("Pin board full remove some notes first.")
@@ -19,21 +19,19 @@ function App() {
 
   }
 
-      const removeNote = (index, e) => {
+      const removeNote = (name) => {
         
-      let text = e.target.nextSibling.value;
-    
-       let parent = e.target.parentNode;
-       let grandparent = parent.parentNode;
-       grandparent.removeChild(parent);
-
+        setNotes(notes.filter((note) => {
+          return note != name;
+        } ))
+        
   }
 
   const textAdded = (index,e) => {
     let newNotes = notes.slice(0);
     newNotes[index] = e.target.value;
     setNotes(newNotes);
-   console.log(notes)
+   console.log(e.target.value)
 
     
   }

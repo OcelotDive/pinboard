@@ -29,7 +29,9 @@ const Container = ({notes, removeNote, textAdded}) => {
     return (
         <StyledContainer>
             <StyledBackground src={corkImage}/>
-            {notes.map((note, index) => <Note key={index} index={index} removeNote={removeNote} textAdded={textAdded} />)}
+            
+
+            {notes.map((note) => <Note key={note} removeNote={removeNote} textAdded={textAdded} name={note}/>)}
         </StyledContainer>
     )
 }
