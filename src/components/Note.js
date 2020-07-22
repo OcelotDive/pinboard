@@ -102,7 +102,7 @@ const Note = ({removeNote, textAdded, index}) => {
     
     return (
         <StyledNote className="note">
-           
+           {index}
             <StyledPin className="pin" onClick={(e) => removeNote(index, e)}></StyledPin>
             <StyledText onChange={(e) =>textAdded(index, e)}></StyledText>
         </StyledNote>

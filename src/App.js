@@ -20,21 +20,17 @@ function App() {
   }
 
       const removeNote = (index, e) => {
-        /*let textValue = e.target.nextSibling.value.toString();
-        console.log(notes)
-        console.log(notes[index].length, textValue.length)
-       setNotes(notes.filter((e) => (e !== textValue)))*/
-       setNotes(notes.filter((item, ind, arr) => {
-         return ind !==2;
-       }))
-        
+       let parent = e.target.parentNode;
+       let grandparent = parent.parentNode;
+       grandparent.removeChild(parent);
+       
   }
 
   const textAdded = (index,e) => {
     let newNotes = notes.slice(0);
     newNotes[index] = e.target.value;
     setNotes(newNotes);
-   
+   console.log(notes)
 
     
   }
