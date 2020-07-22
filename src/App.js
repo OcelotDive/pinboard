@@ -20,10 +20,13 @@ function App() {
   }
 
       const removeNote = (index, e) => {
+        
+      let text = e.target.nextSibling.value;
+    
        let parent = e.target.parentNode;
        let grandparent = parent.parentNode;
        grandparent.removeChild(parent);
-       
+
   }
 
   const textAdded = (index,e) => {
