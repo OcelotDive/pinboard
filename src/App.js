@@ -72,11 +72,12 @@ function App() {
 
   return (
     <div className="App">
+     
       <Container notes={notes} removeNote={removeNote} textAdded={textAdded} addNote={addNote}>
-        
       </Container>
       {/*(<Button addNote={addNote}/>*/}
       <NoteStack id={id}/>
+  
     </div>
   );
 }
