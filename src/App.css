@@ -58,6 +58,40 @@
     box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 4px 3px -2px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .2);
 }
 
+.topNote:hover {
+    cursor: grab;
+}
+
+.topNote:active {
+    cursor: grabbing;
+}
+
+#yellow {
+    background: #CAC531;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F3F9A7, #CAC531);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#purple {
+    background: #f4c4f3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fc67fa, #f4c4f3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fc67fa, #f4c4f3);
+}
+
+#blue {
+    background: #acb6e5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .noteStack:before,
 .noteStack:after {
     content: '';

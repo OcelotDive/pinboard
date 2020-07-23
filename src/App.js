@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from './components/AddButton';
 import Portal from './components/Portal';
 import NoteStack from './components/NoteStack';
@@ -8,14 +8,30 @@ import Container from './components/Container';
 
 function App() {
 
+
+  let [id, setId] = useState('yellow');
   let [notes, setNotes] = useState([]);
  
   const addNote = () => {
     if(notes.length < 18) { 
     setNotes([...notes, Math.floor(Math.random() * 1000000 + (notes.length * Math.floor(Math.random() * 1000.5)))]);
+    
+   
+     if(notes.length === 0 || notes.length === 4 || notes.length === 8 || notes.length === 12 || notes.length === 16) {
+      setId('purple');
+    }
+    else if (notes.length === 2 || notes.length === 6 || notes.length === 10 || notes.length === 14) {
+      setId('blue')
+    }
+    else {
+      setId('yellow');
+    }
+
+
     }
     else {
       alert("Pin board full remove some notes first.")
+      console.log(notes.length)
     }
 
   }
@@ -28,7 +44,19 @@ function App() {
           setNotes(notes.filter((note) => {
           return note !== name;
         } ))
-      }, 1000)
+        if(notes.length === 18 || notes.length === 14 || notes.length === 10 || notes.length === 6 || notes.length === 2) {
+          setId('purple');
+        }
+        else if (notes.length === 16 || notes.length === 12 || notes.length === 8 || notes.length === 4) {
+          setId('blue')
+        }
+        else {
+          setId('yellow');
+        }
+        console.log(notes)
+   
+      }, 1000);
+      
   }
 
   const textAdded = (index,e) => {
@@ -40,13 +68,15 @@ function App() {
 
 
 
+
+
   return (
     <div className="App">
       <Container notes={notes} removeNote={removeNote} textAdded={textAdded} addNote={addNote}>
         
       </Container>
       {/*(<Button addNote={addNote}/>*/}
-      <NoteStack />
+      <NoteStack id={id}/>
     </div>
   );
 }
