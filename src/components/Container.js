@@ -30,17 +30,21 @@ const Container = ({notes, removeNote, textAdded, addNote}) => {
     const noteDropped = (e) => {
         e.stopPropagation();
         e.preventDefault();
-        console.log("Dropped")
+        
+        if(e.target.id === "dropZone") {
         addNote();
+        }
     }
 
     const dragOver = (e) => {
-        e.stopPropagation();
         e.preventDefault();
+        e.stopPropagation();
+        return false;
     }
+    
     return (
         <StyledContainer id="pinboard" onDragOver={dragOver} onDrop={noteDropped}>
-            <StyledBackground src={corkImage}/>
+            <StyledBackground src={corkImage} id="dropZone" draggable="false"/>
             
 
             {notes.map((note) => <Note key={note} removeNote={removeNote} textAdded={textAdded} name={note}/>)}

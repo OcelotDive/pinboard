@@ -6,7 +6,11 @@ const NoteStack = () => {
 
  
 
-
+    const dragOver = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+    }
  
     
     return(
