@@ -1,72 +1,131 @@
 .App {
+    height: 100%;
+    overflow: hidden;
     text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    width: 100%;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 #noteUnpin {
     animation: hingeAnim 1s linear;
 }
 
+div.noteStack {
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    max-width: 2.5%;
+    font-size: 22px;
+    width: 2.5%;
+    margin: 40px auto;
+    border: 1px solid #f5f5f5;
+    padding: 50px;
+    background: #CAC531;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F3F9A7, #CAC531);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 4px 3px -2px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .2);
+}
+
+.topNote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f5f5f5;
+    background: #CAC531;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F3F9A7, #CAC531);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 4px 3px -2px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .2);
+}
+
+div.noteStack:before,
+div.noteStack:after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 3px;
+    background: #f4c4f3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fc67fa, #f4c4f3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fc67fa, #f4c4f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 1px solid #f5f5f5;
+    width: 99%;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0 7px 1px -3px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .2);
+    transform: rotate(8.5deg);
+}
+
+div.noteStack:after {
+    top: 4px;
+    transform: rotate(-6deg);
+    background: #acb6e5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+label {
+    position: absolute;
+    background: #1e1e1e;
+    padding: 5px;
+    right: -3px;
+    bottom: 20px;
+    margin: 0 auto;
+    padding: 8px;
+    color: #fff;
+    text-shadow: none;
+    font-size: 10px;
+    font-style: italic;
+}
+
 @keyframes hingeAnim {
     0% {
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
     }
-  
     20%,
     60% {
-      -webkit-transform: rotate3d(0, 0, 1, 80deg);
-      transform: rotate3d(0, 0, 1, 80deg);
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
+        -webkit-transform: rotate3d(0, 0, 1, 80deg);
+        transform: rotate3d(0, 0, 1, 80deg);
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
     }
-  
     40%,
     80% {
-      -webkit-transform: rotate3d(0, 0, 1, 60deg);
-      transform: rotate3d(0, 0, 1, 60deg);
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-      opacity: 1;
+        -webkit-transform: rotate3d(0, 0, 1, 60deg);
+        transform: rotate3d(0, 0, 1, 60deg);
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        opacity: 1;
     }
-  
     to {
-      -webkit-transform: translate3d(0, 700px, 0);
-      transform: translate3d(0, 700px, 0);
-      opacity: 0;
+        -webkit-transform: translate3d(0, 700px, 0);
+        transform: translate3d(0, 700px, 0);
+        opacity: 0;
     }
-  }
+}

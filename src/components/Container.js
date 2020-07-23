@@ -25,9 +25,21 @@ const StyledBackground = styled.img`
 `
 
 
-const Container = ({notes, removeNote, textAdded}) => {
+const Container = ({notes, removeNote, textAdded, addNote}) => {
+
+    const noteDropped = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log("Dropped")
+        addNote();
+    }
+
+    const dragOver = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+    }
     return (
-        <StyledContainer>
+        <StyledContainer id="pinboard" onDragOver={dragOver} onDrop={noteDropped}>
             <StyledBackground src={corkImage}/>
             
 
