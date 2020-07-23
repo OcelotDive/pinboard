@@ -30,7 +30,6 @@ const Container = ({notes, removeNote, textAdded, addNote}) => {
     const noteDropped = (e) => {
         e.stopPropagation();
         e.preventDefault();
-        
         if(e.target.id === "dropZone") {
         addNote();
         }

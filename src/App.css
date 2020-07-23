@@ -22,7 +22,7 @@
     animation: hingeAnim 1s linear;
 }
 
-div.noteStack {
+.noteStack {
     position: absolute;
     top: 30%;
     left: 4%;
@@ -58,8 +58,8 @@ div.noteStack {
     box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 4px 3px -2px rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .2);
 }
 
-div.noteStack:before,
-div.noteStack:after {
+.noteStack:before,
+.noteStack:after {
     content: '';
     position: absolute;
     left: 2px;
@@ -78,7 +78,7 @@ div.noteStack:after {
     transform: rotate(8.5deg);
 }
 
-div.noteStack:after {
+.noteStack:after {
     top: 4px;
     transform: rotate(-6deg);
     background: #acb6e5;
