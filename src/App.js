@@ -70,6 +70,17 @@ function App() {
     console.log("single method");
   }
 
+  
+  const masterMethod1 = () => {
+    console.log("master method one"); 
+  }
+  
+  const masterMethod2 = () => {
+    console.log("master method two"); 
+  }
+
+
+
 
   return (
     <div className="App">
