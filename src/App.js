@@ -66,7 +66,11 @@ function App() {
     console.log(e.target.value);  
   }
 
-
+  const mainBranchTestMethod = () => {
+    console.log("main branch test"); 
+    
+  }
+  
 
 
 
