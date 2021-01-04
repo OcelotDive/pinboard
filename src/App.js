@@ -65,7 +65,14 @@ function App() {
     setNotes(newNotes);
     console.log(e.target.value);  
   }
-
+  
+  const masterMethod1 = () => {
+    console.log("master method one"); 
+  }
+  
+  const masterMethod2 = () => {
+    console.log("master method two"); 
+  }
 
 
 
