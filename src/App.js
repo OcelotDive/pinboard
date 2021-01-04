@@ -66,7 +66,9 @@ function App() {
     console.log(e.target.value);  
   }
 
-
+  const single = () => {
+    console.log("single method");
+  }
 
 
   return (
