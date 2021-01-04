@@ -68,9 +68,7 @@ function App() {
 
 
 
-  const uselessMethod = () => {
-    console.log("this is a useless method");
-  }
+ 
 
   const mainBranchTestMethod = () => {
     console.log("main branch test"); 
