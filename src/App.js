@@ -66,9 +66,6 @@ function App() {
     console.log(e.target.value);  
   }
 
-  const mastMeth = () => {
-    console.log("added later"); 
-  }
 
 
 
