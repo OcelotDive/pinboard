@@ -66,9 +66,11 @@ function App() {
     console.log(e.target.value);  
   }
 
+  const pointless = () => {
+    console.log("pointless test");
+  }
 
-
- 
+    
 
   const mainBranchTestMethod = () => {
     console.log("main branch test"); 
