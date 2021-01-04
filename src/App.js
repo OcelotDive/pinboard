@@ -66,13 +66,11 @@ function App() {
     console.log(e.target.value);  
   }
 
-
   const test = () => {
     console.log("this is a test method")
-  }
 
-
-
+  const mastMeth = () => {
+    console.log("added later");
   return (
     <div className="App">
      
