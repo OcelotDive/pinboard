@@ -65,6 +65,11 @@ function App() {
     setNotes(newNotes);
     console.log(e.target.value);  
   }
+
+  const single = () => {
+    console.log("single method");
+  }
+
   
   const masterMethod1 = () => {
     console.log("master method one"); 
@@ -73,6 +78,7 @@ function App() {
   const masterMethod2 = () => {
     console.log("master method two"); 
   }
+
 
 
 
