@@ -67,7 +67,9 @@ function App() {
   }
 
 
-
+  const uselessMethod = () => {
+    console.log("this is a useless method");
+  }
 
 
   return (
